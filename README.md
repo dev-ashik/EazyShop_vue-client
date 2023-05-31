@@ -1,4 +1,7 @@
-# hello-world2
+# EazyShop_vue-client
+## site photo
+
+![name-of-you-image](./src/assets/site_photo.png)
 
 ## Project setup
 ```
