@@ -1,11 +1,18 @@
 <template>
   <div id="nav-bar">
-    <router-link to="/products" id="products-link">
-      <h1>FABULOUS FOOTWEAR</h1>
-    </router-link>
-    <router-link to="/cart" id="cart-link">
-      <button>Shopping Cart</button>
-    </router-link>
+    <div>
+      <router-link to="/products" id="products-link">
+        <h1>FABULOUS FOOTWEAR</h1>
+      </router-link>
+    </div>
+    <div class="nav_links-right">
+      <router-link to="/login" id="login">
+        <button>Login</button>
+      </router-link>
+      <router-link to="/cart" id="cart-link">
+        <button>Shopping Cart</button>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -20,6 +27,10 @@ export default {
   border-bottom: 1px solid #ddd;
   height: 75px;
   width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #products-link {
@@ -27,9 +38,9 @@ export default {
   display: block;
   color: black;
   font-size: 22px;
-  left: 32px;
+  /* left: 32px;
   position: absolute;
-  top: 16px;
+  top: 16px; */
   text-decoration: none;
 }
 
@@ -37,9 +48,13 @@ export default {
   margin: 0;
 }
 
+.nav_links-right {
+  display: flex;
+  gap: 1rem;
+}
 #cart-link {
-  position: absolute;
+  /* position: absolute;
   right: 16px;
-  top: 16px;
+  top: 16px; */
 }
 </style>

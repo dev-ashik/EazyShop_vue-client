@@ -5,7 +5,7 @@
       <h3>{{ product.name }}</h3>
       <p>${{ product.price }}</p>
     </div>
-    <button class="remove-button">Remove from Cart</button>
+    <button class="remove-button" @click="$event => removeFromCart(product)" >Remove from Cart</button>
   </div>
 </template>
 
@@ -13,6 +13,22 @@
 export default {
   name: "ProductListItem",
   props: ["product"],
+  methods: {
+    removeFromCart(item) {
+      let EScart = JSON.parse(localStorage.getItem('EScart'));
+
+      const index = EScart.findIndex(cartItem => cartItem.id === item.id);
+
+
+        EScart.splice(index, 1);
+        
+        // Update the cart in Local Storage
+        localStorage.setItem('EScart', JSON.stringify(EScart));
+   
+
+      console.log(index)
+    } 
+  }
 };
 </script>
 

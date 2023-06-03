@@ -11,20 +11,26 @@
 
 <script>
 import ProductsList from "@/components/ProductsList.vue";
-import { cartItems } from "@/fake-data";
+// import { cartItems } from "@/fake-data";
 // import { computed } from '@vue/reactivity';
 
 export default {
   name: "CartPage",
   data() {
     return {
-      cartItems,
+      cartItems: [],
     };
   },
   computed: {
     totalPrice() {
       return this.cartItems.reduce((sum, item) => sum + Number(item.price), 0);
     },
+  },
+  created() {
+
+    if (localStorage.getItem('EScart')) {
+      this.cartItems = JSON.parse(localStorage.getItem('EScart'));
+    }
   },
   components: { ProductsList },
 };
