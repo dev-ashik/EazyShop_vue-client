@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from "vue-router";
 import ProductsPageVue from "@/views/ProductsPage.vue";
 import ProductDetailPageVue from "@/views/ProductDetailPage.vue";
 import CartPageVue from "@/views/CartPage.vue";
+import LoginPageVue from "@/views/LoginPage.vue";
 import NotFoundPageVue from "@/views/NotFoundPage.vue";
+
 
 const routes = [
   {
@@ -19,6 +21,11 @@ const routes = [
     path: "/cart",
     name: "Cart",
     component: CartPageVue,
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: LoginPageVue,
   },
   {
     path: "/",
